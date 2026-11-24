@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maple's World — a personal collection of blogs, poetry, shayari and thoughts.">
+  <title>Maple's World | Words & Feelings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="falling-leaves" aria-hidden="true">
+  <span>🍁</span>
+  <span>🍂</span>
+  <span>🍁</span>
+  <span>🍂</span>
+  <span>🍁</span>
+  <span>🍂</span>
+  <span>🍁</span>
+  <span>🍂</span>
+  <span>🍁</span>
+  <span>🍂</span>
+</div>
+
+
+  <header class="navbar">
+    <a class="logo" href="#" data-page="home">Maple's <span>World.</span></a>
+
+    <nav>
+      <a href="#" data-page="home">Home</a>
+      <a href="#" data-page="blogs">Blogs</a>
+      <a href="#" data-page="shayari">Shayari</a>
+      <a href="#" data-page="about">About</a>
+    </nav>
+
+   <button class="nav-write hidden" id="writeButton">
+  ✎ Write
+   </button> 
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <main id="app">
+
+    <!-- HOME PAGE -->
+    <section id="homePage" class="page active">
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">A PERSONAL CREATIVE JOURNAL</span>
+          <h1>Welcome to<br><span>Maple's World.</span></h1>
+          <p>
+            A little corner of the internet where thoughts,
+            feelings, stories and poetry find their home.
+          </p>
+          <div class="hero-buttons">
+            <button class="primary-btn" data-page="blogs">Explore writings ↗</button>
+            <button class="secondary-btn" data-page="shayari">Read shayari</button>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="image-caption">
+            <span>COLLECTING LITTLE MOMENTS</span>
+            <span>♡</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-section">
+        <span class="eyebrow">A WORLD MADE OF WORDS</span>
+        <h2>Some feelings are better written.</h2>
+        <p>
+          Some are stories, some are memories, and some are
+          feelings we never quite learn to explain.
+          This is where I keep them.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">THE COLLECTION</span>
+            <h2>Latest writings</h2>
+          </div>
+          <button class="text-btn" data-page="blogs">View all ↗</button>
+        </div>
+        <div id="latestPosts" class="post-grid"></div>
+      </section>
+    </section>
+
+    <!-- BLOG PAGE -->
+    <section id="blogsPage" class="page">
+      <div class="page-heading">
+        <span class="eyebrow">THE JOURNAL</span>
+        <h1>Little stories,<br><em>big feelings.</em></h1>
+        <p>Thoughts, experiences, lessons and everything in between.</p>
+      </div>
+      <div id="blogPosts" class="post-grid"></div>
+    </section>
+
+    <!-- SHAYARI PAGE -->
+    <section id="shayariPage" class="page">
+      <div class="page-heading">
+        <span class="eyebrow">WORDS FROM THE HEART</span>
+        <h1>A little <em>shayari.</em></h1>
+        <p>For feelings that words alone cannot explain.</p>
+      </div>
+      <div id="shayariPosts" class="poetry-grid"></div>
+    </section>
+
+    
+<!-- ABOUT PAGE -->
+<section id="aboutPage" class="page">
+  <div class="author-profile">
+
+    <div class="author-image">
+      <img src="aboutImg.png"
+           alt="Illustrated portrait of Nikita Sharma">
+      <span class="image-note">The girl behind the words ♡</span>
+    </div>
+
+    <div class="author-info">
+      <span class="eyebrow">A LITTLE ABOUT THE   WRITER</span>
+
+      <h1>A little about<br><em>the writer ♡</em></h1>
+
+      <p>Behind every page is a mind full of thoughts, stories waiting to be told, and feelings that find their way into words.</p>
+
+      <p>Meet Nikita Sharma, the writer behind Maple's World.</p>
+
+      <p>Her little corner of the world is inspired by her love for reading, storytelling, music and the many emotions hidden in everyday moments.</p>
+
+      <p>Her writing often wanders through deep thoughts, heartfelt shayari and emotions that aren't always easy to put into words. Sometimes it's a thought worth remembering; sometimes it's simply a feeling looking for a place to belong.</p>
+
+      <p>Beyond writing, Nikita enjoys getting lost in books, finding comfort in K-dramas, listening to music and watching the rain fall. Her cheerful, expressive nature brings a little liveliness to the world around her, while her love for the little details gives her writing its own charm.</p>
+
+      <p>For her, words are more than sentences on a page. They're little pieces of imagination, reflection and emotion.</p>
+
+      <p>And this is where those pieces come together.</p>
+
+      <span class="signature">
+        Welcome to Maple's World — a place where every page has a feeling, and every feeling has a story. 🍁
+      </span>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- SINGLE POST PAGE -->
+    <section id="readerPage" class="page">
+      <button class="text-btn" id="backButton">← Back to writings</button>
+      <article id="readerContent" class="reader-content"></article>
+    </section>
+
+    <!-- PRIVATE AUTHOR DASHBOARD -->
+    <section id="writePage" class="page">
+      <div class="dashboard">
+        <div class="dashboard-header">
+          <div>
+            <span class="eyebrow">YOUR PRIVATE SPACE</span>
+            <h1>Writing desk.</h1>
+          </div>
+          <button id="logoutButton" class="secondary-btn hidden">Log out</button>
+        </div>
+
+        <div id="loginPanel" class="login-panel">
+          <h2>Welcome back, writer.</h2>
+          <p>Log in to manage your writings.</p>
+          <form id="loginForm">
+            <label>Email address</label>
+            <input id="email" type="email" required placeholder="Your email">
+            <label>Password</label>
+            <input id="password" type="password" required placeholder="Your password">
+            <button class="primary-btn full-btn" type="submit">Log in</button>
+          </form>
+          <p id="loginMessage" class="message"></p>
+        </div>
+
+        <div id="editorPanel" class="hidden">
+          <div class="editor-layout">
+            <form id="postForm" class="editor-form">
+              <input type="hidden" id="postId">
+
+              <label>Title</label>
+              <input id="postTitle" required maxlength="150" placeholder="Give your writing a title...">
+
+              <label>Category</label>
+              <select id="postCategory">
+                <option value="Blog">Blog</option>
+                <option value="Shayari">Shayari</option>
+                <option value="Poetry">Poetry</option>
+                <option value="Stories">Stories</option>
+                <option value="Thoughts">Thoughts</option>
+              </select>
+
+              <label>Short description</label>
+              <input id="postExcerpt" maxlength="220" placeholder="A little introduction...">
+
+              <label>Your writing</label>
+              <textarea id="postContent" required rows="14" placeholder="Start writing here..."></textarea>
+
+              <div class="editor-actions">
+                <button type="button" id="draftButton" class="secondary-btn">Save draft</button>
+                <button type="submit" id="publishButton" class="primary-btn">Publish ↗</button>
+              </div>
+              <p id="editorMessage" class="message"></p>
+            </form>
+
+            <aside class="my-posts">
+              <h3>My writings</h3>
+              <div id="myPosts"></div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <a class="logo" href="#" data-page="home">Maple's <span>World.</span></a>
+    <p>A little world made of words and feelings.</p>
+    <p class="copyright">© <span id="year"></span> Maple's World. Made with ♡</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
